@@ -1,6 +1,6 @@
 # DiNaM: Disinformation Narrative Mining with Large Language Models
 
-This repository provides tools for mining disinformation narratives based on fact-checking articles. The implementation is described in the paper *"DiNaM: Disinformation Narrative Mining with Large Language Models"*. The code is written in Python and utilizes the Hugging Face Transformers library. Fact-checking articles used in the paper are available under a license from EDMO.
+This repository provides tools for mining disinformation narratives based on fact-checking articles. The implementation is described in the paper *"DiNaM: Disinformation Narrative Mining with Large Language Models"*. Fact-checking articles used in the paper are available under a license from EDMO.
 
 ## Installation
 
