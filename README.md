@@ -70,6 +70,13 @@ python script/cluster_false_information.py --refined_claims <path_to_refined_cla
 - `--umap_params`: Parameters for UMAP dimensionality reduction (default: `{ "n_components": 256, "n_neighbors": 15 }`).
 - `--hdbscan_params`: Parameters for HDBSCAN clustering (default: `{ "min_cluster_size": 10, "min_samples": 15 }`).
 
+#### Optimal Hyperparameters:
+- **UMAP**: Always use `n_components = 256` and `n_neighbors = 15`.
+- **HDBSCAN**:
+  - For the full dataset: `min_cluster_size = 20`, `min_samples = 20`.
+  - For the dataset from `2021-07-01` to `2023-02-01`: `min_cluster_size = 10`, `min_samples = 15`.
+
+
 This script performs the following steps:
 1. **Date Filtering**: Filters refined claims within the specified date range.
 2. **Dimensionality Reduction**: Reduces the dimensionality of claims data using UMAP.
