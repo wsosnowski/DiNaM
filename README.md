@@ -23,18 +23,7 @@ This repository provides tools for mining disinformation narratives based on fac
 
 ## Usage
 
-### 1. Download the Dataset
-
-For convenience, the full dataset of fact-checking articles should be downloaded into the `data/raw` directory. You can access it via the following link:  
-[Download Fact-Checking Dataset](https://drive.google.com/file/d/1EQjcC2gd68w_IHxGAHQHxnv_8Zq46_eo/view?usp=sharing)
-
-Once downloaded, move the dataset to the appropriate directory:
-```bash
-mkdir -p data/raw
-mv <path_to_downloaded_file> data/raw/
-```
-
-### 2. Identify False Information
+### 1. Identify False Information
 This step processes fact-checking articles through various stages, including filtering, extracting claims, verifying claims, and refining the information. Run the following command to execute the pipeline:
 
 ```bash
@@ -55,7 +44,7 @@ This script performs the following stages:
 3. **Verifying Claims**: Verifies extracted claims against reference data.
 4. **Refining Claims**: Refines verified claims for further analysis.
 
-### 3. Cluster False Information
+### 2. Cluster False Information
 Cluster the instances of false information by performing dimensionality reduction and clustering on refined claims. Run the following command:
 
 ```bash
@@ -82,7 +71,7 @@ This script performs the following steps:
 2. **Dimensionality Reduction**: Reduces the dimensionality of claims data using UMAP.
 3. **Clustering**: Clusters the reduced data using HDBSCAN.
 
-### 4. Derive Disinformation Narratives
+### 3. Derive Disinformation Narratives
 Derive disinformation narratives by analyzing clusters of false information. Run the following command:
 
 ```bash
@@ -162,8 +151,11 @@ python tests/test_narratives.py --clustered_claims_path <path_to_clustered_claim
 - `--predicted_narratives_path`: Path to save the predicted narratives text file (default: `./data/processed_test/predicted_narratives.txt`).
 - `--api_key`: API key for OpenAI generative model (default: provided placeholder key).
 
-## Data Directory Structure
 
+
+# Dataset
+
+## Data Directory Structure
 The `data/` directory contains the following files:
 
 1. **raw/fact_checking_articles.csv**  
@@ -180,6 +172,13 @@ The `data/` directory contains the following files:
    - This is required for end-to-end testing of DiNaM to derive disinformation narratives. **Note**: The predicted narratives should also correspond to this same period for accurate evaluation.
 
 
+## License
+
+The articles in this dataset are shared under the EDMO license. Due to copyright restrictions, we are unable to directly share the content of these articles. Instead, we provide links to the dataset, and users are permitted to download the articles in compliance with the DSM Directive, specifically Articles 3 and 4, which allow downloading these articles for reproducing research results.
+
+## Usage
+
+To use the datasets, download the files through the provided links. Once downloaded, you can proceed with the fact-checking analysis, false information extraction, and narrative generation as part of your research.
 
 ## Additional Notes
 - Ensure that you have an active API key for seamless integration.
