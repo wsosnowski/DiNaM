@@ -22,8 +22,27 @@ This repository provides tools for mining disinformation narratives based on fac
    ```
 
 ## Usage
+### 1. Data Preparation
 
-### 1. Identify False Information
+#### 1.1 Set Up Google Cloud Translation API
+- Follow the [Google Cloud setup instructions](https://cloud.google.com/translate/docs/setup) to enable the Translation API, create a service account, and set up credentials.
+
+- Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to point to your service account key file:
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key-file.json"
+  ```
+
+#### 1.3 Install the Correct Version of ChromeDriver
+- Ensure the ChromeDriver version matches your installed version of Chrome. Refer to the official [Google Chrome Testing Versions](https://googlechromelabs.github.io/chrome-for-testing/) page to download the correct version. (Check out the the [JSON API endpoints](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json) to find a specific version.)
+- Update the `/path/to/chromedriver` line in the code with the path to your `chromedriver`.
+
+#### 1.2 Execute the Script
+- Run the script in your terminal:
+  ```bash
+  python scripts/prepare_dataset.py
+  ```
+
+### 2. Identify False Information
 This step processes fact-checking articles through various stages, including filtering, extracting claims, verifying claims, and refining the information. Run the following command to execute the pipeline:
 
 ```bash
@@ -44,7 +63,7 @@ This script performs the following stages:
 3. **Verifying Claims**: Verifies extracted claims against reference data.
 4. **Refining Claims**: Refines verified claims for further analysis.
 
-### 2. Cluster False Information
+### 3. Cluster False Information
 Cluster the instances of false information by performing dimensionality reduction and clustering on refined claims. Run the following command:
 
 ```bash
@@ -71,7 +90,7 @@ This script performs the following steps:
 2. **Dimensionality Reduction**: Reduces the dimensionality of claims data using UMAP.
 3. **Clustering**: Clusters the reduced data using HDBSCAN.
 
-### 3. Derive Disinformation Narratives
+### 4. Derive Disinformation Narratives
 Derive disinformation narratives by analyzing clusters of false information. Run the following command:
 
 ```bash
@@ -175,10 +194,6 @@ The `data/` directory contains the following files:
 ## License
 
 The articles in this dataset are shared under the EDMO license. Due to copyright restrictions, we are unable to directly share the content of these articles. Instead, we provide links to the dataset, and users are permitted to download the articles in compliance with the DSM Directive, specifically Articles 3 and 4, which allow downloading these articles for reproducing research results.
-
-## Usage
-
-To use the datasets, download the files through the provided links. Once downloaded, you can proceed with the fact-checking analysis, false information extraction, and narrative generation as part of your research.
 
 ## Additional Notes
 - Ensure that you have an active API key for seamless integration.
