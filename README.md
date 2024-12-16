@@ -34,7 +34,7 @@ This repository provides tools for mining disinformation narratives based on fac
 
 #### 1.2 Install the Correct Version of ChromeDriver
 - Ensure the ChromeDriver version matches your installed version of Chrome. Refer to the official [Google Chrome Testing Versions](https://googlechromelabs.github.io/chrome-for-testing/) page to download the correct version. (Check out the the [JSON API endpoints](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json) to find a specific version.)
-- Update the `/path/to/chromedriver` line in the code with the path to your `chromedriver`.
+- Update the `/path/to/chromedriver` line in the code of script `scripts/prepare_dataset.py` with the path to your `chromedriver`.
 
 #### 1.3 Execute the Script
 - Run the script in your terminal:
