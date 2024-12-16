@@ -32,11 +32,11 @@ This repository provides tools for mining disinformation narratives based on fac
   export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key-file.json"
   ```
 
-#### 1.3 Install the Correct Version of ChromeDriver
+#### 1.2 Install the Correct Version of ChromeDriver
 - Ensure the ChromeDriver version matches your installed version of Chrome. Refer to the official [Google Chrome Testing Versions](https://googlechromelabs.github.io/chrome-for-testing/) page to download the correct version. (Check out the the [JSON API endpoints](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json) to find a specific version.)
 - Update the `/path/to/chromedriver` line in the code with the path to your `chromedriver`.
 
-#### 1.2 Execute the Script
+#### 1.3 Execute the Script
 - Run the script in your terminal:
   ```bash
   python scripts/prepare_dataset.py
@@ -194,8 +194,3 @@ The `data/` directory contains the following files:
 ## License
 
 The articles in this dataset are shared under the EDMO license. Due to copyright restrictions, we are unable to directly share the content of these articles. Instead, we provide links to the dataset, and users are permitted to download the articles in compliance with the DSM Directive, specifically Articles 3 and 4, which allow downloading these articles for reproducing research results.
-
-## Additional Notes
-- Ensure that you have an active API key for seamless integration.
-
-Feel free to explore and contribute to the repository!
