@@ -76,13 +76,12 @@ python script/cluster_false_information.py --refined_claims <path_to_refined_cla
 - `--start_date`: Start date for filtering claims (default: `2021-07-01`).
 - `--end_date`: End date for filtering claims (default: `2023-02-01`).
 - `--umap_params`: Parameters for UMAP dimensionality reduction (default: `{ "n_components": 256, "n_neighbors": 15 }`).
-- `--hdbscan_params`: Parameters for HDBSCAN clustering (default: `{ "min_cluster_size": 10, "min_samples": 15 }`).
+- `--hdbscan_params`: Parameters for HDBSCAN clustering (default: `{ "min_cluster_size": 25, "min_samples": 20 }`).
 
 #### Optimal Hyperparameters:
 - **UMAP**: Always use `n_components = 256` and `n_neighbors = 15`.
 - **HDBSCAN**:
-  - For the full dataset: `min_cluster_size = 20`, `min_samples = 20`.
-  - For the dataset from `2021-07-01` to `2023-02-01`: `min_cluster_size = 10`, `min_samples = 15`.
+  - For the full dataset: `min_cluster_size = 25`, `min_samples = 20`.
 
 
 This script performs the following steps:
@@ -187,8 +186,11 @@ The `data/` directory contains the following files:
    - Contains pairs of articles and false information. This dataset is used to test the extraction of false information from articles.
 
 4. **gt/ground_truth_narratives.txt**  
-   - Provides ground truth disinformation narratives from the period between `2021-07-01` and `2023-02-01`.  
+   - Provides ground truth disinformation narratives.  
    - This is required for end-to-end testing of DiNaM to derive disinformation narratives. **Note**: The predicted narratives should also correspond to this same period for accurate evaluation.
+
+5. **raw/sputnik_news_articles.csv.csv**  
+   - The dataset of news articles from SputnikGlobe.com. Required for testing DiNaM as a general purpose narrative mining framework.
 
 
 ## License
