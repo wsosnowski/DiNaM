@@ -195,4 +195,4 @@ The `data/` directory contains the following files:
 
 ## License
 
-The articles in this dataset are shared under the EDMO license. Due to copyright restrictions, we are unable to directly share the content of these articles. Instead, we provide links to the dataset, and users are permitted to download the articles in compliance with the DSM Directive, specifically Articles 3 and 4, which allow downloading these articles for reproducing research results.
+The articles in this dataset are shared under the EDMO license. Due to copyright restrictions, we are unable to directly share the content of these articles. Instead, we provide links to the dataset, and users are permitted to download the articles in compliance with the DSM Directive.
