@@ -13,7 +13,7 @@ class OpenAIGenerativeModel(BaseGenerativeModel):
 
     def get_response(self, prompt: str) -> str:
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=self.model_name,
             messages=[{"role": "user", "content": prompt}],
             response_format={"type": "json_object"}
         )
